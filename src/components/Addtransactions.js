@@ -3,19 +3,20 @@ import { GlobalContext } from "../context/Globalstate";
 
 const Addtransactions = () => {
   const [text, setText] = useState("");
-  const [amount, setAmount] = useState(0);
+  const [amount, setAmount] = useState("");
 
   const { addTransaction } = useContext(GlobalContext);
 
   const onSubmit = (e) => {
     e.preventDefault();
-    setAmount();
+
     const newTransaction = {
       id: Math.floor(Math.random() * 100000000),
       text,
       amount: +amount,
     };
-
+    setAmount("");
+    setText("");
     addTransaction(newTransaction);
   };
   return (

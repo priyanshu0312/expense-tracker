@@ -13,6 +13,7 @@ const TransactionList = () => {
         {transactions.map((transaction) => (
           <Transaction transaction={transaction} key={transaction.id} />
         ))}
+        {transactions.length === 0 ? <div>No Transactions Yet!</div> : ""}
       </ul>
     </div>
   );
